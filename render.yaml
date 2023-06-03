@@ -4,7 +4,7 @@ services:
 
  - type: web
 
-    name: alist
+    name: vocechat
 
     env: docker
 
