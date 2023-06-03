@@ -1,1 +1,1 @@
-docker pull privoce/vocechat-server
+FROM
