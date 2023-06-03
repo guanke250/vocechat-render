@@ -4,8 +4,6 @@ services:
 
  - type: web
 
-    name: vocechat
-
     env: docker
 
     repo: https://github.com/guanke250/vocechat-render.git # optional
