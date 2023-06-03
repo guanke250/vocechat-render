@@ -7,6 +7,3 @@ services:
     region: oregon # optional (defaults to oregon)
     plan: free # optional (defaults to starter)
     healthCheckPath: /
-    envVars:
-      - key: PORT
-        value: 3009
