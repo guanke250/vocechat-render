@@ -1,10 +1,18 @@
 version: '3.3'
+
 services:
-vocechat:
-restart: always
-ports:
-- '3019:3000' # 冒号左边可以改成自己服务器未被占用的端口
-container_name: vocechat-server
-volumes:
-- './data:/home/vocechat-server/data' # 冒号左边可以改路径，现在是表示把数据存放在在当前文件夹下的 data 文件夹中
-image: privoce/vocechat-server:latest
+
+    vocechat:
+        image: privoce/vocechat-server:latest
+        container_name: vocechat
+        restart: unless-stopped
+        ports:
+            - "3009:3000"
+        environment:
+          - UID=1000
+          - GID=1000
+          - ADMIN_USER=admin
+          - ADMIN_PASSWORD=123456
+          - DOMAIN=localhost            
+        volumes:
+            - ./vocechat:/home/vocechat-server/data
